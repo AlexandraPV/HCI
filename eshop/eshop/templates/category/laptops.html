@@ -1,0 +1,38 @@
+{% extends 'category/index.html' %}
+
+{% block content %}
+    <h1>Ноутбуки</h1>
+    <div class="content-wrap">
+        <div class="container-flex">
+          {% for elem in all_laptops %}
+              <a class="item" href={{elem.id}}>
+                <div class="photo-wrap">
+                    {% if elem.image %}
+                    <div class="photo-item" style="background-image: url({{elem.image.url}})"></div>
+                      <!-- <img src="{{elem.image.url}}" alt=""> -->
+                    {% endif %}
+                  </div>
+                  <div class="description">
+                      <p class='key-text'> Модель: </p>
+                      <p class="value-text"> {{ elem.model }}</p>
+                  </div>
+                  <div class="description">
+                      <p class='key-text'> Бренд: </p>
+                      <p class="value-text"> {{ elem.brand }}</p>
+                  </div>
+                
+
+                  <!-- <p>Диагональ: {{ elem.diagonal }}</p>
+                  <p>Операционная система : {{ elem.oper_system }}</p>
+                  <p>Операционная память : {{ elem.oper_memory }}</p>
+                  <p>Тип экрана : {{ elem.type_monitor }}</p>
+                  <p>Кол-во ядер: {{ elem.count_core }}</p>
+                  <p>Цена : {{ elem.price }} грн</p> -->
+              </a>
+          {% endfor %}
+        </div>
+        <div class="right-bar">
+          asdasdsa
+        </div>
+    </div>
+{% endblock  %}
